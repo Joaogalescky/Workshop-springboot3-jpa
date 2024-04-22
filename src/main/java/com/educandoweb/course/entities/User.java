@@ -13,11 +13,13 @@ import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
+// Mapeamento
 @Entity
 @Table(name = "tb_user")
 public class User implements Serializable {
 	private static final long serialVersionUID = 1L;
 
+	// Atributos
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -30,9 +32,11 @@ public class User implements Serializable {
 	@OneToMany(mappedBy = "client")
 	private List<Order> orders = new ArrayList<>();
 
+	// Construtor
 	public User() {
 	}
 
+	// Construtor com parâmetros
 	public User(Long id, String name, String email, String phone, String password) {
 		super();
 		this.id = id;
@@ -42,6 +46,7 @@ public class User implements Serializable {
 		this.password = password;
 	}
 
+	// Getters e Setters
 	public Long getId() {
 		return id;
 	}
