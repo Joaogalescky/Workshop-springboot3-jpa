@@ -69,6 +69,10 @@ public class OrderItem implements Serializable {
 	public void setPrice(Double price) {
 		this.price = price;
 	}
+	
+	public Double getSubTotal() {
+		return price * quantity;
+	}
 
 	// Gera um código hash baseado no atributo 'id'; Identificar objetos de
 	// forma eficiente em coleções.
