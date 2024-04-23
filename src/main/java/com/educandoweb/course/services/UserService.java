@@ -9,7 +9,8 @@ import org.springframework.stereotype.Service;
 import com.educandoweb.course.entities.User;
 import com.educandoweb.course.repositories.UserRepository;
 
-@Service
+@Service // Classes de serviço
+// Indica que a classe contém a lógica de negócio da aplicação
 public class UserService {
 
 	@Autowired
@@ -26,5 +27,9 @@ public class UserService {
 
 	public User insert(User obj) {
 		return repository.save(obj);
+	}
+
+	public void delete(Long id) {
+		repository.deleteById(id);
 	}
 }
